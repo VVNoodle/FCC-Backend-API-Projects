@@ -31,6 +31,7 @@ app.set('view engine', 'hbs');
 
 app.use('/public', express.static(process.cwd() + '/public'));
 
+// Displays package.json
 app.route('/_api/package.json')
   .get(function (req, res, next) {
     console.log('requested');
@@ -40,6 +41,7 @@ app.route('/_api/package.json')
     });
   });
 
+// Homepage
 app.route('/')
   .get(function (req, res) {
     res.render("index", {
